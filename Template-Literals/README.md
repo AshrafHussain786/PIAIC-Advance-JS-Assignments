@@ -11,6 +11,7 @@
 
     var coverLetter = "Curriculum Vitae";        
     var userName = "Muhammad Ashraf";
+    
     var date = Date();
 
 - print coverLetter value in "console.log()" ```print multi-line string literals in console.log()``

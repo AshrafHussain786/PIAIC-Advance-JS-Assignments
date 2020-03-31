@@ -45,7 +45,7 @@ showUserName(); // Daniyal Nagori // Local Scope
 */
 
 
-/*
+
 
 // --------------------------
 //  example : 3
@@ -62,7 +62,7 @@ function showUserName() {
 createUserName();
 showUserName(); // throws error: userName is not defined
 
- */
+ 
 
 
 

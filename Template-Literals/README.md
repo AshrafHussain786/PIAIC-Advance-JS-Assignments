@@ -9,4 +9,10 @@
 
 - create some varibale "coverLetter", "userName" , "date" , etc
 
-- print coverLetter value in "console.log()" ```print multi-line string literals in console.log()```
+    var coverLetter = "Curriculum Vitae";        
+    var userName = "Muhammad Ashraf";
+    var date = Date();
+
+- print coverLetter value in "console.log()" ```print multi-line string literals in console.log()``
+
+    console.log(coverLetter + " of " + userName + " as on " + date + " for your perusal.");`

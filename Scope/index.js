@@ -1,11 +1,11 @@
 // ----------------------------
 //  example : 1
 
-
-var userName = "Ameen ALam";
+/*
+var userName = "Ameen ALam"; //Global Scope
 
 function modifyUserName() {
-        userName = "Daniyal Nagori";
+        userName = "Daniyal Nagori"; // Local Scope
     };
 
 function showUserName() {
@@ -17,12 +17,12 @@ alert(userName); // display Ameen Alam
 modifyUserName();
 showUserName();// display Daniyal Nagori
 
-
+*/
 
 // --------------------------
 //  example : 2
 
-/* 
+/*
 function createUserName() {
     userName = "Ameen Alam";
 }
@@ -37,26 +37,26 @@ function showUserName() {
 }
 
 createUserName();
-showUserName(); // Ameen Alam 
+showUserName(); // Ameen Alam  //Global Scope
 
 modifyUserName();
-showUserName(); // Daniyal Nagori 
+showUserName(); // Daniyal Nagori // Local Scope
 
- */
+*/
 
 
-
+/*
 
 // --------------------------
 //  example : 3
-/* 
+ 
 
 function createUserName() {
-    var userName = "Ameen Alam";
+    var userName = "Ameen Alam"; // Local Scope
 }
 
 function showUserName() {
-    alert(userName);
+    alert(userName);        // Local Scope
 }
 
 createUserName();
@@ -73,16 +73,16 @@ showUserName(); // throws error: userName is not defined
 
 
 /* 
-var userName = "Ameen Alam";
+var userName = "Ameen Alam";    // Global Scope
 
 function ShowUserName()
 {
-    var userName = "Daniyal Nagori";
+    var userName = "Daniyal Nagori";  // Local Scope
 
-    alert(userName); // "Daniyal Nagori"
+    alert(userName); // "Daniyal Nagori" 
 }
 
-ShowUserName();
+ShowUserName(); // "Daniyal Nagori"
 
 alert(userName); // Ameen Alam
 

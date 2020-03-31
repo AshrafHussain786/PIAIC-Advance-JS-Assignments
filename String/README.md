@@ -11,12 +11,15 @@ A JavaScript **string** stores a series of characters like "Ameen Alam". A strin
 
 
 // create a variblee name "str1"
+
    var str1;
 
 // Assign a value to "str1 varibale" 
+
    str1 =`ipsum dolor sit amet consectetur adipisicing elit. Commodi minima vitae eveniet 
         repellendus cupiditate temporibus, odio nisi in provident nemo quas ducimus mollitia 
         corrupti aliquid recusandae tempore suscipit dolores ex!`;  
     
 // Print str1 value in "console.log()"
+
     console.log(str1);   

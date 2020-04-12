@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+
+    #regForm {
+        background-color: #daf2f8;
+        margin: 10px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    input,
+    select {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+    }
+
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+        background-color: #ffdddd;
+    }
+
+    /* Hide all steps by default: */
+    .tab {
+        display: none;
+    }
+
+    button {
+        background-color: #ffffff;
+        border-style: solid;
+        border-radius: 10%;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+    }
+
+    #nextBtn {
+        color: orange;
+        border-color: orange;
+    }
+
+    #nextBtn:hover {
+        /* opacity: 0.8; */
+        background-color: green;
+    }
+
+    #prevBtn {
+        color: blue;
+        border-color: blue;
+    }
+
+    #prevBtn:hover {
+        background-color: rgb(202, 245, 13);
+    }
+
+    /* Make circles that indicate the steps of the form: */
+    .step {
+        height: 60px;
+        width: 60px;
+        margin: 200;
+        /* padding-left: 10%; */
+        background-color: red;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.1;
+        text-align: center;
+        font-size: 40px;
+        color: white;
+    }
+
+    .step.active {
+        opacity: 1;
+    }
+
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+        background-color: #4CAF50;
+    }
+</style>
+
+<body>
+
+    <div id="regForm">
+
+        <!-- Header    -->
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center; margin-top:10px;">
+            <span class="step">1</span>
+            <span class="step">2</span>
+            <span class="step">3</span>
+        </div>
+        <h1>SIGN UP</h1>
+        <h5 style="color:blue;">Create account via email address</h5>
+        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eius
+            voluptates consequatur
+            beatae! Illum placeat explicabo praesentium ea doloribus hic ducimus, neque ratione consectetur
+            cupiditate quibusdam amet nulla nobis consequatur!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eius voluptates consequatur
+            beatae! Illum placeat explicabo praesentium ea doloribus hic ducimus, neque ratione consectetur
+            cupiditate quibusdam amet nulla nobis consequatur!
+        </p>
+       
+        <!-- First Division    -->
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">
+            <p><input placeholder="First name *" oninput="this.className = ''" name="fname"></p>
+            <p><input placeholder="Last name *" oninput="this.className = ''" name="lname"></p>
+
+            <!-- Enter Email address and its validation -->
+            <script type="text/javascript" src="emailvalidate.js"></script>
+            <p><input type="email" placeholder="E-mail Address" id="text1" onkeypress="ValidateEmail()"</p>
+            <span><label id="lbltext" style="color: red; visibility: hidden;">Invalid</label> </span>
+
+            <!-- Enter Passwords and its validation -->
+            <script type="text/javascript" src="passwordValidate.js"></script>
+            <p><input type="password" placeholder="Enter Password *"  id="psw" onkeypress="passwordValidate()"> </p>
+            <span id="message" style="color: red;"></span>
+            <p>Password must be atleast 8 characters long including both numbers and letters.
+                Feel free to include special characters too.
+            </p>
+            <script type="text/javascript" src="passwordValidate2.js"></script>
+            <p><input placeholder="Repeat Password *" type="password" id="psw-repeat" onkeypress="passwordValidate2()"></p>
+            <span id="message2" style="color: red;"></span>
+            <p style="color: red;">* represents Mandotary Field</p>
+        </div>
+
+        <!-- Second Division    -->
+        <div class="tab">
+            <h5 style="color:blue;">Personal Page Information:</h5>
+            <p><input placeholder="Address *" oninput="this.className = ''" name="address"></p>
+            <p><input placeholder="Address 2 *" oninput="this.className = ''" name="address2"></p>
+            
+            <!-- Showing combo boxes for Country & State fields -->
+            <script type="text/javascript" src="countries.js"></script>
+            <select id="country" placeholder="Country" name="country"></select>
+            <br /> <br />
+            <select id="state" placeholder="State" name="state"></select>
+
+            <p><input placeholder="City *" oninput="this.className = ''" name="city"></p>
+            <p><input placeholder="Post code" oninput="this.className = ''" name="postcode"></p>
+            <p><input placeholder="Phone" oninput="this.className = ''" name="phone"></p>
+            <p><input placeholder="Mobile Phone" oninput="this.className = ''" name="mphone"></p>
+        </div>
+
+         <!-- Third Division    -->
+        <div class="tab">
+            <h5 style="color:blue;">Career Page:</h5>
+            <p><input placeholder="Job Title *" oninput="this.className = ''" name="job"></p>
+            <p><input placeholder="Qualification *" oninput="this.className = ''" name="qualification"></p>
+
+            <!-- Enter in Experience field -->
+            <select id="experience">
+            <option value="">Years of Experience *</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+
+            <!-- Enter in Date of Birth field -->
+            <script type="text/javascript" src="dbirth.js"></script>
+            <p><input placeholder="Date of Birth (dd-mm-yyyy)" id="birth"></p>
+            <span id="message3" style="color: red;"></span>
+            <p><input placeholder="Website" oninput="this.className = ''" name="web"></p>
+        </div>
+
+        <!-- Footer    -->
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Contine</button>
+            </div>
+            <div style="float: left;">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script type= "text/javascript" src = "countries.js"></script> -->
+    <script>
+        // first parameter is id of country drop-down and second parameter is id of state drop-down
+
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        // This function will display the specified tab of the form...
+        function showTab(n) {
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+
+            // Fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Continue";
+            }
+
+            // Run a function that will display the correct step indicator:
+            fixStepIndicator(n)
+        }
+
+        // This function will figure out which tab to display
+        function nextPrev(n) {
+            var x = document.getElementsByClassName("tab");
+
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("regForm").submit();
+                return false;
+            }
+
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        // This function deals with validation of the form fields
+        function validateForm() {
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+
+            // A loop that checks every input field in the current tab:
+            for (i = 0; i < y.length; i++) {
+                // If a field is empty...
+                if (y[i].value == "") {
+                    // add an "invalid" class to the field:
+                    y[i].className += " invalid";
+                    // and set the current valid status to false
+                    valid = false;
+                }
+            }
+
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        // This function removes the "active" class of all steps...
+        function fixStepIndicator(n) {
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+
+        populateCountries("country", "state");
+        
+        // ValidateEmail();
+
+    </script>
+
+
+</body>
+
+</html>
